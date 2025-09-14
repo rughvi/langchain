@@ -1,4 +1,5 @@
-# langchain
+# ollama native on Mac M3
+
 The following sateps explain how to run Ollama llm in Mac M3.
 
 Steps:
@@ -13,3 +14,4 @@ Steps:
 Note: 
 1. Ollama by default runs in Apple's inbuilt GPU. No need to configure further.
 2. Because of resource restriction Ollama llm takes time (1 minute roughly) to respond for the query.
+
