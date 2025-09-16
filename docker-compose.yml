@@ -11,19 +11,32 @@ services:
       - open-webui:/app/backend/data
     depends_on:
       - llm-runner
-      - embeddings-runner
-
+      - embeddings-runner-gemma
+      - embeddings-runner-mxbai
+      - embeddings-runner-granite
   llm-runner:
     provider:
       type: model
       options:
         model: ai/smollm3:Q8_0
 
-  embeddings-runner:
+  embeddings-runner-gemma:
     provider:
       type: model
       options:
         model: ai/embeddinggemma
+
+  embeddings-runner-mxbai:
+    provider:
+      type: model
+      options:
+        model: ai/mxbai-embed-large:335M-F16
+
+  embeddings-runner-granite:
+    provider:
+      type: model
+      options:
+        model: ai/granite-embedding-multilingual
 
 volumes:
   open-webui:
