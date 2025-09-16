@@ -11,12 +11,19 @@ services:
       - open-webui:/app/backend/data
     depends_on:
       - llm-runner
+      - embeddings-runner
 
   llm-runner:
     provider:
       type: model
       options:
         model: ai/smollm3:Q8_0
+
+  embeddings-runner:
+    provider:
+      type: model
+      options:
+        model: ai/embeddinggemma
 
 volumes:
   open-webui:
